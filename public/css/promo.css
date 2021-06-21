@@ -1,0 +1,16 @@
+/* Container holding the image and the text */
+.container_promo {
+  position: relative;
+  margin-left: 5%;
+  margin-right: 5%;
+}
+
+/* Bottom right text */
+.text-block {
+  position: relative;
+  width: 100%;
+  background-color: black;
+  cursor: pointer;
+  text-align: center;
+  text-decoration:underline
+}
