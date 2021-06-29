@@ -1,0 +1,57 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./kudhung.db"
+}
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+model Produk {
+  id Int @id  @default(autoincrement())
+  jenisProduk  String
+  hargaProduk  Int
+  deskripsiProduk  String
+  labelProduk  String
+  gambarProduk Gambar[]
+  urlProduk String
+  kategori  Kategori  @relation(fields: [kategoriProduk],references:[idKtg])
+  kategoriProduk  Int
+  warnaProduk Warna[]
+}
+
+model Promo{
+  idPromo Int @id @default(autoincrement())  
+  judulPromo String
+  hargaPromo  Int
+  deskripsiPromo  String
+  periodePromo  DateTime
+  gambarPromo Gambar[]
+  urlPromo String
+  warnaPromo  Warna[]
+}
+
+model Kategori{
+  idKtg  Int @id @default(autoincrement())
+  jenisKtg  String
+  namaKtg  Produk[]
+}
+
+model Gambar{
+  idGmbr  String @id
+  urlGmbr  String
+  gmbrProduk  Produk @relation(fields: [idProduk],references:[id])
+  idProduk  Int
+  gmbrPromo Promo @relation(fields: [promoId],references:[idPromo])
+  promoId Int
+}
+
+model Warna{
+  idColor Int @id @default(autoincrement())
+  jenisColor  String
+  colorProduk Produk[] @relation(references:[id])
+  colorPromo Promo[] @relation(references: [idPromo])
+}

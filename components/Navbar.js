@@ -12,7 +12,7 @@ const Navbar = () => (
                 </div>
 
                 <div className="col-xl-6 col-lg-6">
-                    <nav className="navbar__menu">
+                    <nav className="navbar__menu_admin">
                         <ul>
                             <li><Link href="/"><a> Beranda </a></Link></li>
                             <li><Link href="/promo"><a>Promo</a></Link></li>
@@ -23,7 +23,7 @@ const Navbar = () => (
                                 </ul>
                             </li>
                             <li><Link href="/about"><a>About</a></Link></li>
-                            <li><Link href="/detail"><a>Detail</a></Link></li>
+                            <li><Link href="/admin"><a>Admin</a></Link></li>
                         </ul>
                     </nav>
                 </div>
@@ -31,7 +31,7 @@ const Navbar = () => (
                 <div className="col-lg-2">
                     <div className="navbar__right">
                         <div className="navbar__right__auth">
-                            <a href="login" style={{ fontWeight: "bold", fontSize: "18px" }}>Login</a>
+                            <a href="/login" style={{ fontWeight: "bold", fontSize: "18px" }}>Login</a>
                         </div>
                     </div>
                 </div>

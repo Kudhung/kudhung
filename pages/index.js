@@ -37,7 +37,7 @@ const Beranda = () => (
               <div className="section-title">
                 <h4>Square</h4>
               </div>
-              {/* <Grid
+              <Grid
                 gambar_hijab="/img/pashmina/pash-hyc.jpeg"
                 jenis="Pashmina D"
                 harga="40.000"
@@ -51,7 +51,7 @@ const Beranda = () => (
                 gambar_hijab="/img/pashmina/pasqu-b.jpg"
                 jenis="Pashmina F"
                 harga="60.000"
-              /> */}
+              />
             </div>
           </div>
 
@@ -60,7 +60,7 @@ const Beranda = () => (
               <div className="section-title">
                 <h4>New Collection</h4>
               </div>
-              {/* <Grid
+              <Grid
                 gambar_hijab="/img/pashmina/pasqu-hyc.jpg"
                 jenis="Pashmina G"
                 harga="70.000"
@@ -74,7 +74,7 @@ const Beranda = () => (
                 gambar_hijab="/img/pashmina/pas-ceruty.jpg"
                 jenis="Pashmina I"
                 harga="90.000"
-              /> */}
+              />
             </div>
           </div>
         </div>

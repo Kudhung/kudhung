@@ -8,9 +8,9 @@ function MyApp({ Component, pageProps }) {
         <meta content="width=device-width,initial-scale=1" name="viewport" />
         <meta content="#333333" name="theme-color" />
         <base href="/" />
-        <link href="global.css" rel="stylesheet" />
+        {/* <link href="global.css" rel="stylesheet" /> */}
         <link href="manifest.json" rel="manifest" crossOrigin="use-credentials" />
-        <link href="favicon.png" rel="icon" type="image/png" />
+        {/* <link href="favicon.png" rel="icon" type="image/png" /> */}
         <link href="https://fonts.googleapis.com/css2?family=Cookie&amp;display=swap" rel="stylesheet" />
         <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800;900&amp;display=swap" rel="stylesheet" />
 
@@ -21,7 +21,7 @@ function MyApp({ Component, pageProps }) {
         <link href="/css/navbar.css" rel="stylesheet" />
         <link href="/css/app.css" rel="stylesheet" />
         <link href="/css/footer.css" rel="stylesheet" />
-        <link href="/css/kategori.css" rel="stylesheet" />
+        {/* <link href="/css/kategori.css" rel="stylesheet" /> */}
         <link href="/css/banner.css" rel="stylesheet" /> 
         <link href="/css/about.css" rel="stylesheet" />  
         <link href="/css/promo.css" rel="stylesheet" />

@@ -18,7 +18,7 @@ const About = () => (
                 <div className="row">
                   <div className="column">
                     <div className="card">
-                      <img src="img/pashmina/pash.jpeg" className="image_team" alt="Jane" />
+                      <img src="img/pashmina/pash.jpeg" alt="Jane"  style={{height:"260px"}}/>
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Septiany Diyah Ayu K.A</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CEO </h6>
@@ -29,7 +29,7 @@ const About = () => (
                   </div>
                   <div className="column ">
                     <div className="card">
-                      <img src="img/pashmina/pash.jpeg" className="image_team" alt="Jane" />
+                      <img src="img/team/cfo.jpeg" alt="Jane" style={{height:"260px"}}/>
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Silva Setianingrum</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CFO </h6>
@@ -40,7 +40,7 @@ const About = () => (
                   </div>
                   <div className="column">
                     <div className="card">
-                      <img src="img/pashmina/pash.jpeg" className="image_team" alt="Jane" />
+                      <img src="img/pashmina/pash.jpeg" alt="Jane" style={{height:"260px"}} />
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Riska Aulia Nur Ardiyanti</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CMO </h6>
@@ -51,7 +51,7 @@ const About = () => (
                   </div>
                   <div className="column">
                     <div className="card">
-                      <img src="img/pashmina/pash.jpeg" className="image_team" alt="Jane" />
+                      <img src="img/team/cto.jpg" alt="Jane" style={{height:"260px"}} />
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Devanty Ika Sanjaya Putri</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CTO </h6>
@@ -67,34 +67,34 @@ const About = () => (
             <div className="col-lg-6 col-md-6">
               <div className="contact__content">
                 <div className="contact__address">
-                  <h5 style={{ textAlign: "unset" }}>Contact info</h5>
-                  <ul style={{ textAlign: "left" }}>
-                    <li>
-                      <h6 style={{fontSize:"15px"}} className="fontawesome_about" ><FontAwesomeIcon icon={faMapMarker} style={{ color: "red" }} /> Address </h6>
+                  <h5 style={{marginLeft:"10%"}}>Contact info</h5>
+                  <ul style={{ marginLeft:"0%",marginRight:"-10%"}}>
+                    <li >
+                      <h6 style={{fontSize:"20px"}}><FontAwesomeIcon  className="fontawesome" icon={faMapMarker} style={{ color: "red",marginRight:"4px"}} /> Address </h6>
                       <p>Jl. Jenderal Ahmad Yani No.80, Taman Baru, Kec. Banyuwangi, Kabupaten Banyuwangi, Jawa Timur 68416</p>
                     </li>
                     <li>
-                      <h6><FontAwesomeIcon icon={faPhone} className="fontawesome" style={{ color: "red", fontSize: "28px" }} />  Phone</h6>
+                      <h6 style={{fontSize:"20px"}}><FontAwesomeIcon icon={faPhone} className="fontawesome" style={{ color: "red",marginRight:"4px"}} />  Phone</h6>
                       <p><span>08113506655</span><span>083847549013</span></p>
                     </li>
                     <li>
-                      <h6><FontAwesomeIcon icon={faHeadphones} className="fontawesome" style={{ color: "red", fontSize: "28px" }} />  Support </h6>
+                      <h6 style={{fontSize:"20px"}}><FontAwesomeIcon icon={faHeadphones} className="fontawesome" style={{ color: "red",marginRight:"4px"}} />  Support </h6>
                       <p>kudhung.bwi@gmail.com</p>
                     </li>
                     <li>
-                      <h6><FontAwesomeIcon icon={faIcons} className="fontawesome" style={{ color: "red", fontSize: "28px" }} /> Social Media </h6>
+                      <h6 style={{fontSize:"20px"}}><FontAwesomeIcon icon={faIcons} className="fontawesome" style={{ color: "red",marginRight:"4px"}} /> Social Media </h6>
 
-                      <ul style={{ marginTop: "5%", marginLeft: "-4%" }} className="breadcrumb__links">
+                      <ul style={{ marginTop: "2%", marginLeft: "-3%" }} className="breadcrumb__links">
                         <li>
-                          <FontAwesomeIcon icon={faFacebook} style={{ color: "black", fontSize: "19px", marginRight: "10px" }} />
+                          <FontAwesomeIcon icon={faFacebook} style={{ color: "black", width:"5%", marginRight: "10px",marginRight:"4px"}} />
                           <a href=".">kudhung.bwi@gmail.com</a>
                         </li>
                         <li>
-                          <FontAwesomeIcon icon={faYoutube} style={{ color: "black", fontSize: "19px", marginRight: "10px" }} />
+                          <FontAwesomeIcon icon={faYoutube} style={{ color: "black", width:"5%", marginRight: "10px",marginRight:"4px"}} />
                           <a href="https://www.youtube.com/channel/UC7sBMEcQitsqxhSzi4eUjGg">Kudhung Bwi</a>
                         </li>
                         <li>
-                          <FontAwesomeIcon icon={faInstagram} style={{ color: "black", fontSize: "19px", marginRight: "10px" }} />
+                          <FontAwesomeIcon icon={faInstagram} style={{ color: "black", width:"5%", marginRight: "10px",marginRight:"4px"}} />
                           <a href=".">Kudhung_Bwi_Official</a>
                         </li>
                       </ul>
@@ -102,8 +102,8 @@ const About = () => (
                   </ul>
                 </div>
                 <div className="contact__form">
-                  <h5 style={{ textAlign: "unset" }}>SEND MESSAGE</h5>
-                  <form action="#" style={{ marginLeft: "10%" }}>
+                  <h5 style={{marginLeft:"10%"}}>SEND MESSAGE</h5>
+                  <form action="#"  style={{ marginLeft:"10%",marginRight:"0%"}}>
                     <input type="text" placeholder="Name" />
                     <input type="text" placeholder="Email" />
                     <textarea placeholder="Message"></textarea>
