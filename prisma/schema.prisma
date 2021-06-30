@@ -13,11 +13,11 @@ generator client {
 model Produk {
   id Int @id  @default(autoincrement())
   jenisProduk  String
-  hargaProduk  Int
+  hargaProduk  String
   deskripsiProduk  String
   labelProduk  String
-  gambarProduk Gambar[]
-  urlProduk String
+  fotoProduk Gambar[]
+  gambarProduk String
   kategori  Kategori  @relation(fields: [kategoriProduk],references:[idKtg])
   kategoriProduk  Int
   warnaProduk Warna[]
@@ -26,11 +26,11 @@ model Produk {
 model Promo{
   idPromo Int @id @default(autoincrement())  
   judulPromo String
-  hargaPromo  Int
+  hargaPromo  String
   deskripsiPromo  String
-  periodePromo  DateTime
-  gambarPromo Gambar[]
-  urlPromo String
+  periodePromo  String
+  fotoPromo Gambar[]
+  gambarPromo String
   warnaPromo  Warna[]
 }
 
@@ -41,7 +41,7 @@ model Kategori{
 }
 
 model Gambar{
-  idGmbr  String @id
+  idGmbr  Int @id @default(autoincrement())
   urlGmbr  String
   gmbrProduk  Produk @relation(fields: [idProduk],references:[id])
   idProduk  Int

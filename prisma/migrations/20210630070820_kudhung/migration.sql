@@ -2,10 +2,10 @@
 CREATE TABLE "Produk" (
     "id" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "jenisProduk" TEXT NOT NULL,
-    "hargaProduk" INTEGER NOT NULL,
+    "hargaProduk" TEXT NOT NULL,
     "deskripsiProduk" TEXT NOT NULL,
     "labelProduk" TEXT NOT NULL,
-    "urlProduk" TEXT NOT NULL,
+    "gambarProduk" TEXT NOT NULL,
     "kategoriProduk" INTEGER NOT NULL,
     FOREIGN KEY ("kategoriProduk") REFERENCES "Kategori" ("idKtg") ON DELETE CASCADE ON UPDATE CASCADE
 );
@@ -14,10 +14,10 @@ CREATE TABLE "Produk" (
 CREATE TABLE "Promo" (
     "idPromo" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "judulPromo" TEXT NOT NULL,
-    "hargaPromo" INTEGER NOT NULL,
+    "hargaPromo" TEXT NOT NULL,
     "deskripsiPromo" TEXT NOT NULL,
-    "periodePromo" DATETIME NOT NULL,
-    "urlPromo" TEXT NOT NULL
+    "periodePromo" TEXT NOT NULL,
+    "gambarPromo" TEXT NOT NULL
 );
 
 -- CreateTable
@@ -28,7 +28,7 @@ CREATE TABLE "Kategori" (
 
 -- CreateTable
 CREATE TABLE "Gambar" (
-    "idGmbr" TEXT NOT NULL PRIMARY KEY,
+    "idGmbr" INTEGER NOT NULL PRIMARY KEY AUTOINCREMENT,
     "urlGmbr" TEXT NOT NULL,
     "idProduk" INTEGER NOT NULL,
     "promoId" INTEGER NOT NULL,

@@ -4,9 +4,9 @@ import prisma from "../../client.ts";
 
 export async function getServerSideProps(ctx) {
     const dataPashmina = await prisma.produk.findMany(
-        // {
-        // where: { kategoriProduk: 1 },
-    // }
+        {
+        where: { kategoriProduk: 2 },
+    }
     )
     return {
         props: { dataPashmina },
@@ -53,7 +53,7 @@ const Pashmina = (props) => (
                                 <div className="col-lg-3 col-md-6" key={pashmina.id}>
                                     <List
                                         id={pashmina.id}
-                                        gambarProduk={pashmina.urlProduk}
+                                        gambarProduk={pashmina.gambarProduk}
                                         jenisProduk={pashmina.jenisProduk}
                                         hargaProduk={pashmina.hargaProduk}
                                         labelProduk={pashmina.labelProduk}

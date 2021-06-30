@@ -5,13 +5,15 @@ export default async (req, res) => {
     return res
     .status(405)
     .json({ message: "Request method Tidak Diijinkan" });
-  const kategori = JSON.parse(req.body);
-  const update = await prisma.kategori.update({
+  const gambar = JSON.parse(req.body);
+  const update = await prisma.gambar.update({
     where: {
-      idKtg:kategori.idKtg,
+      idGmbr:gambar.idGmbr,
     },
     data: {
-      jenisKtg:kategori.jenisKtg
+      urlGmbr:gambar.urlGmbr,
+      idProduk:gambar.idProduk,
+      promoId:gambar.promoId
     },
   });
   res.json(update);

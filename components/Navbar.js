@@ -12,7 +12,7 @@ const Navbar = () => (
                 </div>
 
                 <div className="col-xl-6 col-lg-6">
-                    <nav className="navbar__menu_admin">
+                    <nav className="navbar__menu">
                         <ul>
                             <li><Link href="/"><a> Beranda </a></Link></li>
                             <li><Link href="/promo"><a>Promo</a></Link></li>
@@ -23,7 +23,7 @@ const Navbar = () => (
                                 </ul>
                             </li>
                             <li><Link href="/about"><a>About</a></Link></li>
-                            <li><Link href="/admin"><a>Admin</a></Link></li>
+                            <li><Link href="/admin/home"><a>Admin</a></Link></li>
                         </ul>
                     </nav>
                 </div>
