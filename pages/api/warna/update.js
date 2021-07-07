@@ -11,7 +11,7 @@ export default async (req, res) => {
       idColor:warna.idColor,
     },
     data: {
-        jenisColor:color.jenisColor
+        jenisColor:warna.jenisColor
     },
   });
   res.json(update);

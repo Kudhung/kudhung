@@ -1,176 +1,160 @@
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 // import { faTimes } from '@fortawesome/free-solid-svg-icons'
 import LayoutAdmin from '../../components/Layout_Admin'
+import { useForm } from 'react-hook-form'
 import prisma from '../../client.ts'
-
-function My_Function() {
-    alert("hai")
-}
+import React, { useState } from "react";
 
 export async function getServerSideProps(context) {
+    const daftarProduk = await prisma.produk.findMany();
     const dataKategori = await prisma.kategori.findMany();
     const dataWarna = await prisma.warna.findMany();
-    return { props: { dataKategori, dataWarna } }
+    return { props: { daftarProduk, dataKategori, dataWarna } }
 }
 
-const FormAdmin = (props) => (
-    <section className="content">
-        <h3 className="section_title_post" style={{ marginTop: "1%" }}>TAMBAH PRODUCT</h3>
-        <div className="py-3 px-0 card" style={{ marginLeft: "20%", marginRight: "20%", marginTop: "1%" }}>
-            <div className="card-body row">
-                <div className="form-group col-md-6">
-                    <label htmlFor="">Produk</label>
-                    <input
-                        className="form-control"
-                        type="text"
-                        placeholder="Produk Name"
-                        style={{ height: "45px" }}
-                        onClick={My_Function}
-                    />
-                </div>
+const FormAdmin = (props) => {
+    const { register, handleSubmit, errors } = useForm();
+    return (
+        <form className="content" onSubmit={handleSubmit(props.onSubmit)}>
+            <h3 className="section_title_post" style={{ marginTop: "1%" }}>TAMBAH PRODUCT</h3>
+            <div className="py-3 px-0 card" style={{ marginLeft: "20%", marginRight: "20%", marginTop: "1%" }}>
+                <div className="card-body row">
+                    <div className="form-group col-md-6">
+                        <label htmlFor="">Produk</label>
+                        <input
+                            {...register('jenisProduk', { required: true })}
+                            className="form-control"
+                            type="text"
+                            placeholder="Produk Name"
+                            style={{ height: "45px" }} />
+                    </div>
 
-                <div className="form-group col-md-6">
-                    <label htmlFor="">Harga</label><input
-                        className="form-control"
-                        type="text"
-                        placeholder="Price"
-                        style={{ height: "45px" }}
-                        onClick={My_Function}
-                    />
-                </div>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="">Harga</label><input
+                            {...register('hargaProduk', { required: true })}
+                            className="form-control"
+                            type="text"
+                            placeholder="Price"
+                            style={{ height: "45px" }} />
+                    </div>
 
-                <div className="form-group col-md-6">
-                    <label htmlFor="">Gambar Utama</label><textarea
-                        className="form-control"
-                        placeholder="Url Gambar"
-                        style={{ minHeight: "50%", maxHeight: "100%", resize: "none" }}
-                        onClick={My_Function}
-                    />
-                </div>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="">Gambar Utama</label><textarea
+                            {...register('gambarProduk', { required: true })}
+                            className="form-control"
+                            placeholder="Url Gambar"
+                            style={{ minHeight: "50%", maxHeight: "100%", resize: "none" }}
 
-                <div className="form-group col-md-6">
-                    <label htmlFor="">Deskripsi</label><textarea
-                        className="form-control"
-                        placeholder="Description"
-                        style={{ minHeight: "50%", maxHeight: "100%", resize: "none" }}
-                        onClick={My_Function}
-                    />
-                </div>
+                        />
+                    </div>
 
+                    <div className="form-group col-md-6">
+                        <label htmlFor="">Deskripsi</label><textarea
+                            {...register('deskripsiProduk', { required: true })}
+                            className="form-control"
+                            placeholder="Description"
+                            style={{ minHeight: "50%", maxHeight: "100%", resize: "none" }}
+                        /> </div>
 
-                <div className="form-group col-md-6">
-                    <label htmlFor="">Kategori</label><select
-                        className="form-control"
-                        placeholder="Jenis"
-                        style={{ height: "45px" }}
-                    >
-                        {props.dataKategori.map((kategori, nomor = 1) => (
-                            <option value={kategori.idKtg} key={kategori.idKtg}>{nomor + 1}. {kategori.jenisKtg}</option>
-                        ))}
-                    </select>
-                </div>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="">Kategori</label><select
+                            {...register('kategoriProduk', { required: true })}
+                            className="form-control"
+                            placeholder="Jenis"
+                            style={{ height: "45px" }}
+                        >
+                            {props.dataKategori.map((kategori, nomor = 1) => (
+                                <option value={kategori.idKtg} key={kategori.idKtg}>{nomor + 1}. {kategori.jenisKtg}</option>
+                            ))}
+                        </select>
+                    </div>
 
-                <div className="form-group col-md-6">
-                    <label htmlFor="">Label Collection</label><select
-                        className="form-control"
-                        placeholder="Jenis"
-                        style={{ height: "45px" }}
-                    >
-                        <option value="New Produk">New Produk</option>
-                        <option value="Limited Stock">Limited Stock</option>
-                        <option value="Pre-Order">Pre-Order</option>
-                    </select>
-                </div>
+                    <div className="form-group col-md-6">
+                        <label htmlFor="">Label Produk</label><input
+                            {...register('labelProduk', { required: true })}
+                            className="form-control"
+                            type="text"
+                            placeholder="Label Produk"
+                            style={{ height: "45px" }} />
+                    </div>
 
-                <div className="form-group col-md-12 col-lg-12">
-                        <label htmlFor="" style={{textAlign:"center"}}>Warna</label>
-                    <form action="" method="" className="row" style={{border:"1px grey solid",padding:"5px 5px 5px 5px"}}>
+                    <div className="form-group col-md-12 col-lg-12">
+                        <label htmlFor="" style={{ textAlign: "center" }}>Warna</label>
                         {props.dataWarna.map((warna, nomor = 1) => (
-                                <p className="col-lg-3 col-md-6"><input type='checkbox' name={warna.idColor} value={warna.idColor}/> {nomor + 1}. {warna.jenisColor}</p>
-                            
-                        ))}
-                    </form>
+                            <p className="col-lg-3 col-md-6" key={warna.idColor}>
+                                <input type='checkbox' id={warna.idColor} value={warna.jenisColor} {...register('warnaProduk',{required:true})} /> {nomor + 1}. {warna.jenisColor}
+                            </p>
+                        ))}</div>
+
+                    <button
+                        className="btn btn-primary btn-sm btn-block  col-md-6"
+                        type="submit" style={{ marginLeft: "25%", marginTop: "5%" }}
+                    >Simpan</button>
                 </div>
-
-                {/* <div className="form-group col-md-6">
-                    <label htmlFor="">Foto-Foto Produk</label><input
-                        className="form-control"
-                        type="text"
-                        placeholder="Url Foto"
-                        style={{ height: "45px" }}
-                        onClick={My_Function}
-                    />
-                    <ul>
-                        <div style={{ textAlign: "left", marginTop: "2px" }}>
-                            Looping Nanti
-                            <label htmlFor=""><textarea  onClick={My_Function} value="https://firebasestorage.googleapis.com/v0/b/fotoproduk-91958.appspot.com/o/pas-ceruty.jpg?alt=media&token=f750d244-e331-43dd-99cf-771604abeaf9" style={{ marginRight: "5px", textAlign: "left", width: "340px", height: "50px", resize: "none" }} disabled></textarea><button style={{ display: "contents" }} onClick={My_Function} ><FontAwesomeIcon icon={faTimes} style={{ width: "8px", textAlign: "right", marginTop: "-12%", marginLeft: "8px" }} /></button></label>
-
-                            <label htmlFor=""><textarea onClick={My_Function}  value="https://firebasestorage.googleapis.com/v0/b/fotoproduk-91958.appspot.com/o/pas-ceruty.jpg?alt=media&token=f750d244-e331-43dd-99cf-771604abeaf9" style={{ marginRight: "5px", textAlign: "left", width: "340px", height: "50px", resize: "none" }} disabled></textarea><button style={{ display: "contents" }} onClick={My_Function} ><FontAwesomeIcon icon={faTimes} style={{ width: "8px", textAlign: "right", marginTop: "-12%", marginLeft: "8px" }} /></button></label>
-                        </div>
-                    </ul>
-                </div> */}
-                <button
-                    className="btn btn-primary btn-sm btn-block  col-md-6"
-                    type="button" style={{ marginLeft: "25%", marginTop: "5%" }} onClick={My_Function}
-                >Simpan</button>
             </div>
-        </div>
-    </section>
-)
+        </form>)
+}
 
-const Admin = (props) => (
-    <LayoutAdmin>
-        <FormAdmin dataKategori={props.dataKategori} dataWarna={props.dataWarna} />
-        <section className="content_post">
-            <h3 className="section_title_post">LIST PRODUCT</h3>
-            <div className="container">
-                <div className="py-3 px-0">
-                    <div className="row">
-                        <div className="post_post col-md-5">
-                            <div className="content_post">
-                                <p className="id">ID Produk : 09654892748</p>
-                                <p className="title_post">Pashmina Premium</p>
-                                <p className="title_post" style={{ fontSize: "10px", color: "black" }}>New Produk</p>
-                                <div className="img_produk">
-                                    <img src="https://placeimg.com/300/150/tech" alt="dumy" />
+const Admin = (props) => {
+    const [daftarProduk, setDaftarProduk] = useState(props.daftarProduk)
+    return (
+        <LayoutAdmin>
+            <FormAdmin dataKategori={props.dataKategori} dataWarna={props.dataWarna}
+
+                onSubmit={async (data, event) => {
+                    const produk = {
+                        jenisProduk: data.jenisProduk,
+                        hargaProduk: data.hargaProduk,
+                        deskripsiProduk: data.deskripsiProduk,
+                        labelProduk: data.labelProduk,
+                        gambarProduk: data.gambarProduk,
+                        kategoriProduk: data.kategoriProduk,
+                        warnaProduk: data.warnaProduk
+                    };
+
+                    try {
+                        const respon = await fetch('/api/produk/post', {
+                            method: 'POST',
+                            body: JSON.stringify(produk),
+                        });
+
+                        if (!respon.ok) throw new Error(respon.statusText);
+                        let status = await respon.json();
+                        if (status !== null) {
+                            event.target.reset();
+                            setDaftarProduk([...daftarProduk, produk]);
+                        }
+                    } catch (error) {
+                        console.log(error)
+                    }
+                }} />
+
+            <section className="content_post">
+                <h3 className="section_title_post">LIST PRODUCT</h3>
+                <div className="container">
+                    <div className="py-3 px-0">
+                        <div className="row">
+                            {daftarProduk.map((produk) => (
+                                <div className="post_post col-md-5" key={produk.id}>
+                                    <div className="content_post">
+                                        <p className="title_post">{produk.jenisProduk}</p>
+                                        <div className="img_produk">
+                                            <img src={produk.gambarProduk} alt="Produk" className="img fluid img-thumbnail" style={{width:"250px"}} />
+                                        </div>
+                                        <p className="price_post" >{produk.hargaProduk}</p>
+                                        <p className="desc_post">{produk.deskripsiProduk}</p>
+                                        <hr />
+                                        <div className="div_button_post">
+                                            <button className="button_update_post"  >Update</button>
+                                            <button className="button_remove_post"  >Remove</button>
+                                        </div>
+                                    </div>
                                 </div>
-                                <p className="price_post" >Rp. 800.000</p>
-                                <p className="warna" >Warna Tersedia : <b> Orange, Abu-Abu, Hitam</b></p>
-                                <p className="collection">Kategori : <b> Pashmina </b></p>
-                                <p className="desc_post">Pashmina adalah jenis wol kashmir sempurna dan tekstil yang terbuat dari wol tersebut dan pertama kali ditenun di India. </p>
-                                <hr />
-                                <div className="div_button_post">
-                                    <button className="button_update_post" onClick={My_Function} >Update</button>
-                                    <button className="button_remove_post" onClick={My_Function} >Remove</button>
-                                </div>
-                            </div>
+                            ))}
                         </div>
-
-                        <div className="post_post col-md-5">
-                            <div className="content_post">
-                                <p className="id">ID Produk : 09654892748</p>
-                                <p className="title_post">Pashmina Premium</p>
-                                <p className="title_post" style={{ fontSize: "10px", color: "black" }}>New Produk</p>
-                                <div className="img_produk">
-                                    <img src="https://placeimg.com/300/150/tech" alt="dumy" />
-                                </div>
-                                <p className="price_post" >Rp. 800.000</p>
-                                <p className="warna" >Warna Tersedia : <b> Orange, Abu-Abu, Hitam</b></p>
-                                <p className="collection">Kategori : <b> Pashmina </b></p>
-                                <p className="desc_post">Pashmina adalah jenis wol kashmir sempurna dan tekstil yang terbuat dari wol tersebut dan pertama kali ditenun di India. </p>
-                                <hr />
-                                <div className="div_button_post">
-                                    <button className="button_update_post" onClick={My_Function} >Update</button>
-                                    <button className="button_remove_post" onClick={My_Function} >Remove</button>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
-            </div>
-        </section>
-    </LayoutAdmin>
-
-)
+            </section>
+        </LayoutAdmin>)
+}
 export default Admin

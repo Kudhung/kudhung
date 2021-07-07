@@ -1,7 +1,8 @@
-import LayoutAdmin from "../../components/Layout_Admin";
+import LayoutAdmin from "../../../components/Layout_Admin";
 import { useForm } from 'react-hook-form'
-import prisma from '../../client.ts'
+import prisma from '../../../client.ts'
 import React, { useState } from "react";
+import ListGambar from "../../../components/AdminGambar";
 
 export async function getServerSideProps(context) {
     const daftarGambar = await prisma.gambar.findMany();
@@ -65,7 +66,7 @@ const FormGambar = (props) => {
 }
 
 const AdminGambar = (props) => {
-    const [daftarGambar, setUrlGambar] = useState(props.daftarGambar)
+    const [daftarGambar, setDaftarGambar] = useState(props.daftarGambar)
     return (
         <LayoutAdmin>
             <div className="content" style={{ position: "relative" }}>
@@ -75,6 +76,7 @@ const AdminGambar = (props) => {
                         <div className="form-group">
                             <FormGambar
                                 dataProduk={props.dataProduk} dataPromo={props.dataPromo}
+
                                 onSubmit={async (data, event) => {
                                     const gambar = { urlGmbr: data.urlGmbr, idProduk: data.idProduk, promoId: data.promoId };
 
@@ -88,7 +90,7 @@ const AdminGambar = (props) => {
                                         let status = await respon.json();
                                         if (status !== null) {
                                             event.target.reset();
-                                            setUrlGambar([...daftarGambar, gambar]);
+                                            setDaftarGambar([...daftarGambar, gambar]);
                                         }
                                     } catch (error) {
                                         console.log(error)
@@ -96,34 +98,7 @@ const AdminGambar = (props) => {
                                 }}
                             />
 
-
-                            <div style={{ width: "100%" }}>
-                                <table className="table table-striped ">
-                                    <thead>
-                                        <tr style={{ textAlign: "center" }}>
-                                            <th>No</th>
-                                            <th>URL</th>
-                                            <th>Id Produk</th>
-                                            <th>Id Promo</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        {daftarGambar.map((gambar, nomor = 1) => (
-                                            <tr key={gambar.idGmbr}>
-                                                <td style={{ textAlign: "center" }}>{nomor + 1}</td>
-                                                <td style={{ textAlign: "left", width: "100px" }}>{gambar.urlGmbr}</td>
-                                                <td style={{ textAlign: "center", width: "150px" }}>{gambar.idProduk}</td>
-                                                <td style={{ textAlign: "center", width: "150px" }}>{gambar.promoId}</td>
-                                                <td className="div_button_post">
-                                                    <button className="button_update_post">Update</button>
-                                                    <button className="button_remove_post">Remove</button>
-                                                </td>
-                                            </tr>
-                                        ))}
-                                    </tbody>
-                                </table>
-                            </div>
+                                <ListGambar daftarGambar={props.daftarGambar}/>
                         </div>
                     </div>
                 </div>

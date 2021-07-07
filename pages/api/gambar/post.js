@@ -10,9 +10,9 @@ export default async (req,res) => {
 
     const post = await prisma.gambar.create({
         data:{
-            urlGmbr:gambar.jenisKtg,
-            idProduk:gambar.idProduk,
-            promoId:gambar.promoId
+            urlGmbr:gambar.urlGmbr,
+            idProduk:Number(gambar.idProduk),
+            promoId:Number(gambar.promoId)
         },
     });
 
