@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
         <link href="/css/app.css" rel="stylesheet" />
         <link href="/css/footer.css" rel="stylesheet" />
         {/* <link href="/css/kategori.css" rel="stylesheet" /> */}
-        <link href="/css/banner.css" rel="stylesheet" /> 
+        {/* <link href="/css/banner.css" rel="stylesheet" />  */}
         <link href="/css/about.css" rel="stylesheet" />  
         <link href="/css/promo.css" rel="stylesheet" />
         <link href="/css/detail.css" rel="stylesheet" />      

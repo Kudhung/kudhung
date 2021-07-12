@@ -1,8 +1,8 @@
 /* Container holding the image and the text */
 .container_promo {
   position: relative;
-  margin-left: 5%;
-  margin-right: 5%;
+  margin-left: 2%;
+  margin-right: 2%;
 }
 
 /* Bottom right text */

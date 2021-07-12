@@ -5,7 +5,7 @@ import prisma from "../../client.ts";
 export async function getServerSideProps(ctx) {
     const dataPashmina = await prisma.produk.findMany(
         {
-        where: { kategoriProduk: 2 },
+        where: { kategoriProduk: 1 },
     }
     )
     return {

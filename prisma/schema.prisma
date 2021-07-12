@@ -16,7 +16,7 @@ model Produk {
   hargaProduk     String
   deskripsiProduk String
   labelProduk     String
-  fotoProduk      Gambar[]
+  fotoProduk      Gambarproduk[]
   gambarProduk    String
   kategori        Kategori @relation(fields: [kategoriProduk], references: [idKtg])
   kategoriProduk  Int
@@ -29,7 +29,7 @@ model Promo {
   hargaPromo     String
   deskripsiPromo String
   periodePromo   String
-  fotoPromo      Gambar[]
+  fotoPromo      Gambarpromo[]
   gambarPromo    String
   warnaPromo     Warna[]
 }
@@ -40,11 +40,15 @@ model Kategori {
   namaKtg  Produk[]
 }
 
-model Gambar {
-  idGmbr     Int    @id @default(autoincrement())
-  urlGmbr    String
+model Gambarproduk {
+  idGmbrproduk     Int    @id @default(autoincrement())
+  urlGmbrproduk    String
   gmbrProduk Produk @relation(fields: [idProduk], references: [id])
   idProduk   Int
+}
+model Gambarpromo {
+  idGmbrpromo     Int    @id @default(autoincrement())
+  urlGmbrpromo    String
   gmbrPromo  Promo  @relation(fields: [promoId], references: [idPromo])
   promoId    Int
 }

@@ -15,9 +15,9 @@ const Wrapper = () => (
         <aside className="sidebar_admin">
             <ul className="menu-content">
                 <li className="sidebar-menu"><Link href='/admin/home'><a><i className="fa fa-shopping-basket"></i> Home </a></Link></li>
-                <li className="sidebar-menu"> <Link href='/admin/kategori'><a ><i className="fa fa-shopping-basket"></i> Kategori </a></Link></li>
-                <li className="sidebar-menu"><Link href='/admin/gambar'><a href="."><i className="fa fa-shopping-basket"></i>  Gambar </a></Link></li>
-                <li className="sidebar-menu"><Link href='/admin/warna'><a href="."><i className="fa fa-shopping-basket"></i>  Warna </a></Link></li>
+                <li className="sidebar-menu"> <Link href='/admin/category'><a ><i className="fa fa-shopping-basket"></i> Kategori </a></Link></li>
+                <li className="sidebar-menu"><Link href='/admin/gallery'><a href="."><i className="fa fa-shopping-basket"></i>  Gambar </a></Link></li>
+                <li className="sidebar-menu"><Link href='/admin/color'><a href="."><i className="fa fa-shopping-basket"></i>  Warna </a></Link></li>
                 <li className="sidebar-menu"><Link href='/admin/promo'><a href="."><i className="fa fa-shopping-basket"></i>  Promo </a></Link></li>
             </ul>
         </aside>

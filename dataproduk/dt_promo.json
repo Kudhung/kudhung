@@ -1,34 +1,34 @@
 [
     {
-        "id":1,
-        "promo":"Bundling",
-        "harga":"100.000",
-        "gambar":"/img/pashmina/pash.jpeg",
-        "deskripsi":"Paket Hijab Square terbaru collection dari @Khudung",
-        "periode":"1 Januari - 2 Februari"
+        "id": 1,
+        "promo": "Bundling",
+        "harga": "100.000",
+        "gambar": "/img/pashmina/pash.jpeg",
+        "deskripsi": "Paket Hijab Square terbaru collection dari @Khudung",
+        "periode": "31 November 2021 - 22 Desember 2021"
     },
     {
-        "id":2,
-        "promo":"Bundling 2",
-        "harga":"80.000",
-        "gambar":"/img/pashmina/pash.jpeg",
-        "deskripsi":"Paket Hijab Square terbaru collection dari @Khudung",
-        "periode":"3 Maret - 4 April"
+        "id": 2,
+        "promo": "Bundling 2",
+        "harga": "80.000",
+        "gambar": "/img/pashmina/pash.jpeg",
+        "deskripsi": "Paket Hijab Square terbaru collection dari @Khudung",
+        "periode": "3 Maret 2021 - 4 April 2021"
     },
     {
-        "id":3,
-        "promo":"Bundling 3",
-        "harga":"90.000",
-        "gambar":"/img/pashmina/pash.jpeg",
-        "deskripsi":"Paket Hijab Pashmina Square terbaru collection dari @Khudung",
-        "periode":"5 Mei - 6 Juni"
+        "id": 3,
+        "promo": "Bundling 3",
+        "harga": "90.000",
+        "gambar": "/img/pashmina/pash.jpeg",
+        "deskripsi": "Paket Hijab Pashmina Square terbaru collection dari @Khudung",
+        "periode": "5 Mei 2021 - 6 Juni 2021"
     },
     {
-        "id":4,
-        "promo":"Bundling",
-        "harga":"150.000",
-        "gambar":"/img/pashmina/pash.jpeg",
-        "deskripsi":"Paket Hijab Pashmina terbaru collection dari @Khudung",
-        "periode":"9 Juli - 8 Agustus"
+        "id": 4,
+        "promo": "Bundling",
+        "harga": "150.000",
+        "gambar": "/img/pashmina/pash.jpeg",
+        "deskripsi": "Paket Hijab Pashmina terbaru collection dari @Khudung",
+        "periode": "9 Juli 2021 - 8 Agustus 2021"
     }
-]   
+]

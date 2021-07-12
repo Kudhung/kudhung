@@ -53,7 +53,7 @@ const About = () => (
                     <div className="card">
                       <img src="img/team/cto.jpg" alt="Jane" style={{height:"260px"}} />
                       <div className="container">
-                        <h6 style={{ fontSize: "25px" }}>Devanty Ika Sanjaya Putri</h6>
+                        <h6 style={{ fontSize: "25px" }}>Devanty Ika Sanjaya P</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CTO </h6>
                         <p className="title">Chief Technology Officer</p>
                         <p>example@example.com</p>
@@ -68,7 +68,7 @@ const About = () => (
               <div className="contact__content">
                 <div className="contact__address">
                   <h5 style={{marginLeft:"10%"}}>Contact info</h5>
-                  <ul style={{ marginLeft:"0%",marginRight:"-10%"}}>
+                  <ul style={{ marginLeft:"5%"}}>
                     <li >
                       <h6 style={{fontSize:"20px"}}><FontAwesomeIcon  className="fontawesome" icon={faMapMarker} style={{ color: "red",marginRight:"4px"}} /> Address </h6>
                       <p>Jl. Jenderal Ahmad Yani No.80, Taman Baru, Kec. Banyuwangi, Kabupaten Banyuwangi, Jawa Timur 68416</p>
@@ -103,7 +103,7 @@ const About = () => (
                 </div>
                 <div className="contact__form">
                   <h5 style={{marginLeft:"10%"}}>SEND MESSAGE</h5>
-                  <form action="#"  style={{ marginLeft:"10%",marginRight:"0%"}}>
+                  <form action="#"  style={{ marginLeft:"10%"}}>
                     <input type="text" placeholder="Name" />
                     <input type="text" placeholder="Email" />
                     <textarea placeholder="Message"></textarea>

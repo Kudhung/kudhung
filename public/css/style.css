@@ -110,6 +110,10 @@ ol {
   Helper CSS
 -----------------------*/
 
+
+.trash{padding:2px; border:1px solid red; margin-left:30%; background-color:red; color:#fff}
+td{padding:5px}
+
 .section-title {
 	margin-bottom: 45px;
 }
@@ -507,11 +511,13 @@ ol {
 
 .banner {
 	height: 500px;
+	background-image: url("/img/baner.jpg");
 }
 
 .banner__text span {
-	font-size: 18px;
-	color: #ca1515;
+	font-size:30px;
+	font-weight: bolder;
+	color: black;
 	text-transform: uppercase;
 }
 
@@ -519,7 +525,6 @@ ol {
 	font-size: 80px;
 	color: #111111;
 	font-family: "Cookie", cursive;
-	margin-bottom: 15px;
 }
 
 .banner__text a {
@@ -544,7 +549,7 @@ ol {
 
 .banner__slider {
 	text-align: center;
-	padding: 150px 0 0;
+	padding: 120px 0 0;
 }
 
 .banner__slider.owl-carousel .owl-dots {
@@ -1029,6 +1034,21 @@ ol {
 /*---------------------
   Categories
 -----------------------*/
+
+.shop_now{
+	font-size:18px;
+	font-style: oblique;
+	text-decoration:none;
+}
+.shop_now:hover{
+	text-decoration: dotted;
+	color:red;
+	font-weight:bold;
+	cursor: pointer;
+}
+.align_kategori{
+	text-align:justify;
+}
 
 .categories {
 	overflow: hidden;

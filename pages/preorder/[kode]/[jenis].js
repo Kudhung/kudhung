@@ -1,7 +1,6 @@
 import Main_Layout from "../../../components/Main_Layout";
 import Link from 'next/link';
 import prisma from "../../../client.ts";
-import React, { useState } from 'react';
 
 export async function getServerSideProps(context) {
   let kode = context.params.kode;
@@ -12,15 +11,13 @@ export async function getServerSideProps(context) {
   let { jenisProduk, hargaProduk, fotoProduk, deskripsiProduk, gambarProduk, warnaProduk } = data;
   return { props: { jenisProduk, hargaProduk, fotoProduk, deskripsiProduk, gambarProduk, warnaProduk } };
 }
-
-const Detail_Pashmina = (props) => {
-  const [count, setCount]= useState(1);
+const Detail_Preorder = (props) => {
   return (
     <Main_Layout>
       <section className="product-details spad">
         <div className="container">
           <div className="row">
-            <div className="col-lg-6 col-md-12 col-sm-12">
+            <div className="col-lg-6">
               <div className="product__details__pic">
                 <div className="container">
                   <div className="row">
@@ -32,13 +29,11 @@ const Detail_Pashmina = (props) => {
                         ))}</div>
 
                       {props.fotoProduk.map((produk, i = 1) => (
-                        <div key={i+1}>
                         <Link href="#produk.urlGmbr" scroll={false}>
                           <a style={{
                             fontSize: "15px", fontWeight: "bold", textDecoration: "none"
                           }} hidden>{i + 1}</a>
                         </Link>
-                        </div>
                       ))}
                     </div>
                   </div>
@@ -54,21 +49,16 @@ const Detail_Pashmina = (props) => {
                 <hr />
                 <div className="product__details__button">
                   <div className="quantity row">
-                    <div className="col-lg-4 col-md-4">
-                      <span >Quantity:</span>
+                    <div className="col-lg-4">
+                      <span className="col-lg-6">Quantity:</span>
                       <div className="pro-qty">
-                        <span className="dec qtybtn" onClick={() => {
-                          if(count>1){
-                            setCount(count - 1)
-                          }
-                        }} >-</span>
-                        <input type="text" id="qty" defaultValue={ count} disabled />
-                        <span className="inc qtybtn" onClick={() => 
-                            setCount(count + 1)}>+</span>
-                      </div>
+                      <span className="dec qtybtn">-</span>
+                      <input type="text" defaultValue="1" onClick="" />
+                      <span className="inc qtybtn">+</span>
                     </div>
-                    <div className="col-lg-4 col-md-4">
-                      <span>Color Available:</span>
+                    </div>
+                    <div className="col-lg-4">
+                      <span>Color:</span>
                       <select className="pro-qty-clr">
                         {props.warnaProduk.map((warna) => (
                           <option value={warna.jenisColor} key={warna.idColor}>{warna.jenisColor}</option>
@@ -87,4 +77,4 @@ const Detail_Pashmina = (props) => {
     </Main_Layout>
   );
 };
-export default Detail_Pashmina;
+export default Detail_Preorder;
