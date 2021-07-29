@@ -19,36 +19,16 @@ const Wrapper = () => (
         <aside className="sidebar_admin">
             <ul className="menu-content">
                 <li className="sidebar-menu">
-                    <Link href='/admin/product'>
-                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
-                            <i className="fa fa-list-alt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
-                            Product
-                        </a>
-                    </Link>
+                    <a href='/admin/product' style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                        <i className="fa fa-list-alt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
+                        Product
+                    </a>
                 </li>
                 <li className="sidebar-menu">
-                    <Link href='/admin/promo'>
-                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
-                            <i className="fa fa-list-alt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
-                            Promo
-                        </a>
-                    </Link>
-                </li>
-                <li className="sidebar-menu">
-                    <Link href='/admin/product'>
-                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
-                            <i className="fa fa-product-hunt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
-                            Produk2
-                        </a>
-                    </Link>
-                </li>
-                <li className="sidebar-menu">
-                    <Link href='/admin/promo'>
-                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
-                            <i className="fa fa-calendar" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
-                            Promo2
-                        </a>
-                    </Link>
+                    <a href='/admin/promo' style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                        <i className="fa fa-list-alt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
+                        Promo
+                    </a>
                 </li>
                 <li className="sidebar-menu">
                     <Link href='/admin/gallery'>
