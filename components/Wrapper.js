@@ -20,40 +20,40 @@ const Wrapper = () => (
             <ul className="menu-content">
                 <li className="sidebar-menu">
                     <Link href='/admin/product'>
-                        <a style={{fontWeight:"bold",fontSize:"20px",fontFamily:"monospace"}}>
-                            <i className="fa fa-product-hunt" style={{marginLeft:"15%", fontSize:"20px",marginRight:"5%"}}></i>
+                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                            <i className="fa fa-product-hunt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
                             Produk
                         </a>
                     </Link>
                 </li>
                 <li className="sidebar-menu">
                     <Link href='/admin/promo'>
-                        <a style={{fontWeight:"bold",fontSize:"20px",fontFamily:"monospace"}}>
-                            <i className="fa fa-calendar" style={{marginLeft:"15%", fontSize:"20px",marginRight:"5%"}}></i>
+                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                            <i className="fa fa-calendar" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
                             Promo
                         </a>
                     </Link>
                 </li>
                 <li className="sidebar-menu">
                     <Link href='/admin/gallery'>
-                        <a style={{fontWeight:"bold",fontSize:"20px",fontFamily:"monospace"}}>
-                            <i className="fa fa-image" style={{marginLeft:"15%", fontSize:"20px",marginRight:"5%"}}></i>
+                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                            <i className="fa fa-image" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
                             Gambar
                         </a>
                     </Link>
                 </li>
                 <li className="sidebar-menu">
                     <Link href='/admin/category'>
-                        <a style={{fontWeight:"bold",fontSize:"20px",fontFamily:"monospace"}}>
-                            <i className="fa fa-list-alt" style={{marginLeft:"15%", fontSize:"20px",marginRight:"5%"}}></i>
+                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                            <i className="fa fa-list-alt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
                             Kategori
                         </a>
                     </Link>
                 </li>
                 <li className="sidebar-menu">
                     <Link href='/admin/color'>
-                        <a style={{fontWeight:"bold",fontSize:"20px",fontFamily:"monospace"}}>
-                            <i className="fa fa-paint-brush" style={{marginLeft:"15%", fontSize:"20px",marginRight:"5%"}}></i>
+                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                            <i className="fa fa-paint-brush" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
                             Warna
                         </a>
                     </Link>

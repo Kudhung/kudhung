@@ -195,13 +195,13 @@ const Detail_Pashmina = (props) => {
                   </div>
                   <div className="quantity col-lg-12">
                     <span>Jumlah Pesan :</span>
-                    <div className="pro-qty" style={{width:"155px"}}>
+                    <div className="pro-qty" style={{ width: "155px" }}>
                       <span className="dec qtybtn" onClick={() => {
                         if (count > 1) {
                           setCount(count - 1)
                         }
                       }} >-</span>
-                      <input defaultValue={count} disabled />
+                      <input defaultValue={count} />
                       <span className="inc qtybtn" onClick={() =>
                         setCount(count + 1)}>+</span>
                     </div>
