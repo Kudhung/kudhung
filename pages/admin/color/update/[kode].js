@@ -11,7 +11,6 @@ export async function getServerSideProps(context) {
     let data = await prisma.warna.findUnique({
         where: { idColor: Number(kode) },
     });
-
     let { idColor, jenisColor } = data;
     return { props: { idColor, jenisColor, daftarWarna } };
 };
@@ -19,9 +18,9 @@ export async function getServerSideProps(context) {
 const UpdateWarna = (props) => {
     const { register, handleSubmit, errors } = useForm();
     return (
-        <form className="form-group row" style={{ marginBottom: "0%"}} onSubmit={handleSubmit(props.onSubmit)}>
+        <form className="form-group row" style={{ marginBottom: "0%", marginLeft: "5%" }} onSubmit={handleSubmit(props.onSubmit)}>
             < div className="form-group row" style={{ marginBottom: "5%" }}>
-                <div className="col-md-12">Masukkan Kategori Baru</div>
+                <div className="col-md-12">Masukkan Warna Baru</div>
                 <div className=" col-md-4">
                     <input
                         {...register('jenisColor', { required: true })}
@@ -34,18 +33,23 @@ const UpdateWarna = (props) => {
                         onChange={(Event) => props.setJenisColor(Event.target.value)}
                     />
                 </div>
-                <div className=" col-md-4" style={{ marginTop: "-3%", marginLeft: "37%" }}>
+                <div className=" col-md-4" style={{ marginTop: "-3%", marginLeft: "42%" }}>
                     <button
                         className="btn btn-primary btn-sm btn-block  col-md-6"
-                        type="submit" style={{ marginTop: "-8%" }}>Update
+                        type="submit" style={{ marginTop: "-8%" }}
+                    >
+                        Update
                     </button>
                 </div>
-                <div className=" col-md-4" style={{ marginTop: "-3%", marginLeft: "53%" }}>
+                <div className=" col-md-4" style={{ marginTop: "-3%", marginLeft: "57%" }}>
                     <Link href="/admin/color">
                         <button
-                        className="btn btn-primary btn-sm btn-block  col-md-6"
-                        type="submit" style={{ marginTop: "-8%" }}>Cancel
-                    </button></Link>
+                            className="btn btn-primary btn-sm btn-block  col-md-6"
+                            type="submit" style={{ marginTop: "-8%" }}
+                        >
+                            Cancel
+                        </button>
+                    </Link>
                 </div>
             </div>
         </form>
@@ -53,42 +57,38 @@ const UpdateWarna = (props) => {
 }
 
 const UpWarna = (props) => {
-
     const [jenisColor, setJenisColor] = useState(props.jenisColor);
     const [id, setId] = useState(props.idColor);
     return (
         <LayoutAdmin>
-            <div className="content" style={{position:"relative"}}>
-                <h3 className="section_title_post" style={{ marginTop: "1%", textAlign: "center", marginLeft: "5%", marginRight: "-10%" }}>List Warna</h3>
-                <div className="py-6 px-0" style={{ marginLeft: "20%", marginRight: "2%", marginTop: "1%" }}>
+            <div className="content" style={{ position: "relative" }}>
+                <h3 className="section_title_post" style={{ marginTop: "1%", textAlign: "center", marginLeft: "45%", marginRight: "30%" }}>Daftar Warna</h3>
+                <div className="py-6 px-0" style={{ marginLeft: "35%", marginRight: "15%", marginTop: "1%" }}>
                     <div className="card-body">
                         <div className="form-group">
-                            <UpdateWarna jenisColor={jenisColor} setJenisColor={setJenisColor} onSubmit={async (data, event) => {
-                            const warna = { jenisColor: data.jenisColor, idColor: props.idColor };
-                            try {
-                                const respon = await fetch('/api/color/update', {
-                                    method: 'POST',
-                                    body: JSON.stringify(warna),
-                                });
-
-                                if (!respon.ok) throw new Error(respon.statusText);
-
-                                let status = await respon.json();
-
-                                if (status !== null) {
-                                    event.target.reset();
-                                    location.reload()
-                                    window.history.back()
-                                }
-                            } catch (error) {
-                                console.log(error);
-                            }
-                        }
-                        }
+                            <UpdateWarna
+                                jenisColor={jenisColor}
+                                setJenisColor={setJenisColor}
+                                onSubmit={async (data, event) => {
+                                    const warna = { jenisColor: data.jenisColor, idColor: props.idColor };
+                                    try {
+                                        const respon = await fetch('/api/color/update', {
+                                            method: 'POST',
+                                            body: JSON.stringify(warna),
+                                        });
+                                        if (!respon.ok) throw new Error(respon.statusText);
+                                        let status = await respon.json();
+                                        if (status !== null) {
+                                            event.target.reset();
+                                            location.reload()
+                                            window.history.back()
+                                        }
+                                    } catch (error) {
+                                        console.log(error);
+                                    }
+                                }}
                             />
-
-
-                            <ListWarna daftarWarna={props.daftarWarna} id ={id} setId={setId} jenis={jenisColor}  setJenis={setJenisColor}  hidden={true}/>
+                            <ListWarna daftarWarna={props.daftarWarna} id={id} setId={setId} jenis={jenisColor} setJenis={setJenisColor} hidden={true} />
                         </div>
                     </div>
                 </div>

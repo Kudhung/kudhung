@@ -11,6 +11,7 @@ export default async (req, res) => {
     const post = await prisma.gambarproduk.create({
         data: {
             urlGmbrproduk: gambarproduk.urlGmbrproduk,
+            ketGmbr: gambarproduk.ketGmbr,
             idProduk: Number(gambarproduk.idProduk),
         },
     });

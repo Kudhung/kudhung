@@ -1,7 +1,8 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import {faHeadphones, faMapMarker, faPhone, faIcons } from '@fortawesome/free-solid-svg-icons'
-import { faFacebook, faYoutube, faInstagram } from '@fortawesome/free-brands-svg-icons'
+import {faYoutube, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import MainLayout from '../components/Main_Layout'
+import Link from 'next/link'
 
 const About = () => (
       <MainLayout>
@@ -18,45 +19,45 @@ const About = () => (
                 <div className="row">
                   <div className="column">
                     <div className="card">
-                      <img src="img/pashmina/pash.jpeg" alt="Jane"  style={{height:"260px"}}/>
+                      <img src="img/team/ceo.jpg" alt="Septiany"  style={{height:"260px"}}/>
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Septiany Diyah Ayu K.A</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CEO </h6>
                         <p className="title"> Chief Executive Officer</p>
-                        <p>example@example.com</p>
+                        <p style={{fontSize:"12px"}}>septiany.amalia@gmail.com</p>
                       </div>
                     </div>
                   </div>
                   <div className="column ">
                     <div className="card">
-                      <img src="img/team/cfo.jpeg" alt="Jane" style={{height:"260px"}}/>
+                      <img src="img/team/cfo.jpeg" alt="Silva" style={{height:"260px"}}/>
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Silva Setianingrum</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CFO </h6>
                         <p className="title">Chief Financial Officer</p>
-                        <p>example@example.com</p>
+                        <p style={{fontSize:"12px"}}>silvasetia19@gmail.com</p>
                       </div>
                     </div>
                   </div>
                   <div className="column">
                     <div className="card">
-                      <img src="img/pashmina/pash.jpeg" alt="Jane" style={{height:"260px"}} />
+                      <img src="img/team/cmo.jpg" alt="Riska" style={{height:"260px"}} />
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Riska Aulia Nur Ardiyanti</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CMO </h6>
                         <p className="title">Credit Marketing Officer</p>
-                        <p>example@example.com</p>
+                        <p style={{fontSize:"12px"}}>riskaaulion0102@gmail.com</p>
                       </div>
                     </div>
                   </div>
                   <div className="column">
                     <div className="card">
-                      <img src="img/team/cto.jpg" alt="Jane" style={{height:"260px"}} />
+                      <img src="img/team/cto.jpg" alt="Devanty" style={{height:"260px"}} />
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Devanty Ika Sanjaya P</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CTO </h6>
                         <p className="title">Chief Technology Officer</p>
-                        <p>example@example.com</p>
+                        <p style={{fontSize:"12px"}}>devantyikasanjayaputri@gmail.com</p>
                       </div>
                     </div>
                   </div>
@@ -75,41 +76,35 @@ const About = () => (
                     </li>
                     <li>
                       <h6 style={{fontSize:"20px"}}><FontAwesomeIcon icon={faPhone} className="fontawesome" style={{ color: "red",marginRight:"4px"}} />  Phone</h6>
-                      <p><span>08113506655</span><span>083847549013</span></p>
+                      <p><span>08113506655</span><span>083857247099</span></p>
                     </li>
                     <li>
                       <h6 style={{fontSize:"20px"}}><FontAwesomeIcon icon={faHeadphones} className="fontawesome" style={{ color: "red",marginRight:"4px"}} />  Support </h6>
-                      <p>kudhung.bwi@gmail.com</p>
+                      <a>kudhung.bwi@gmail.com</a>
                     </li>
                     <li>
                       <h6 style={{fontSize:"20px"}}><FontAwesomeIcon icon={faIcons} className="fontawesome" style={{ color: "red",marginRight:"4px"}} /> Social Media </h6>
 
                       <ul style={{ marginTop: "2%", marginLeft: "-3%" }} className="breadcrumb__links">
                         <li>
-                          <FontAwesomeIcon icon={faFacebook} style={{ color: "black", width:"5%", marginRight: "10px",marginRight:"4px"}} />
-                          <a href=".">kudhung.bwi@gmail.com</a>
-                        </li>
-                        <li>
                           <FontAwesomeIcon icon={faYoutube} style={{ color: "black", width:"5%", marginRight: "10px",marginRight:"4px"}} />
                           <a href="https://www.youtube.com/channel/UC7sBMEcQitsqxhSzi4eUjGg">Kudhung Bwi</a>
                         </li>
                         <li>
                           <FontAwesomeIcon icon={faInstagram} style={{ color: "black", width:"5%", marginRight: "10px",marginRight:"4px"}} />
-                          <a href=".">Kudhung_Bwi_Official</a>
+                          <Link href="https://instagram.com/kudhu.ng?utm_medium=copy_link"><a>Kudhung_Bwi_Official</a></Link>
+                        </li>
+                        <li>
+                          <FontAwesomeIcon icon={faWhatsapp} style={{ color: "black", width:"5%", marginRight: "10px",marginRight:"4px"}} />
+                          <a onClick={()=>(
+                                window.open('https://web.whatsapp.com/send' + '?phone=' + '6283857247099','_blank')
+                            )}>Kudhung</a>
                         </li>
                       </ul>
                     </li>
                   </ul>
                 </div>
-                <div className="contact__form">
-                  <h5 style={{marginLeft:"10%"}}>SEND MESSAGE</h5>
-                  <form action="#"  style={{ marginLeft:"10%"}}>
-                    <input type="text" placeholder="Name" />
-                    <input type="text" placeholder="Email" />
-                    <textarea placeholder="Message"></textarea>
-                    <button type="submit" className="site-btn">Send Message</button>
-                  </form>
-                </div>
+                
               </div>
             </div>
           </div>

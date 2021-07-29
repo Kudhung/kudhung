@@ -9,14 +9,17 @@ export async function getServerSideProps(context) {
     return { props: { daftarWarna } }
 }
 
-
 const FormWarna = (props) => {
-    const { register, handleSubmit, errors } = useForm();
+    const { register, handleSubmit, formState: { errors } } = useForm();
     return (
-        <form className="form-group row" style={{ marginBottom: "0%" }} onSubmit={handleSubmit(props.onSubmit)}>
+        <form className="form-group row" style={{ marginBottom: "0%", marginLeft: "20%" }} onSubmit={handleSubmit(props.onSubmit)}>
             < div className="form-group row" style={{ marginBottom: "5%" }}>
                 <div className=" col-md-6">
-                    <label htmlFor="">Masukkan warna</label>
+                    <label htmlFor="">Masukkan Warna
+                        <p style={{ color: "red", fontSize: "12px" }}>
+                            {errors.jenisColor?.type === 'required' && "(Masukkan jenis warna)"}
+                        </p>
+                    </label>
                     <input
                         {...register('jenisColor', { required: true })}
                         className="form-control"
@@ -29,7 +32,9 @@ const FormWarna = (props) => {
                 <div className=" col-md-6" style={{ marginTop: "-7%", marginLeft: "70%" }}>
                     <button
                         className="btn btn-primary btn-sm btn-block  col-md-6"
-                        type="submit" style={{ marginTop: "-8%" }}>Simpan
+                        type="submit" style={{ marginTop: "-8%" }}
+                    >
+                        Simpan
                     </button>
                 </div>
             </div>
@@ -44,20 +49,18 @@ const AdminWarna = (props) => {
     return (
         <LayoutAdmin>
             <div className="content" style={{ position: "relative" }}>
-                <h3 className="section_title_post" style={{ marginTop: "1%", textAlign: "center", marginLeft: "5%", marginRight: "-10%" }}>List Warna</h3>
-                <div className="py-6 px-0" style={{ marginLeft: "20%", marginRight: "2%", marginTop: "1%" }}>
+                <h3 className="section_title_post" style={{ marginTop: "1%", textAlign: "center", marginLeft: "45%", marginRight: "30%" }}>Daftar Warna</h3>
+                <div className="py-6 px-0" style={{ marginLeft: "35%", marginRight: "15%", marginTop: "1%" }}>
                     <div className="card-body">
                         <div className="form-group">
                             <FormWarna
                                 onSubmit={async (data, event) => {
                                     const warna = { jenisColor: data.jenisColor };
-
                                     try {
                                         const respon = await fetch('/api/color/post', {
                                             method: 'POST',
                                             body: JSON.stringify(warna),
                                         });
-
                                         if (!respon.ok) throw new Error(respon.statusText);
                                         let status = await respon.json();
                                         if (status !== null) {
@@ -69,8 +72,6 @@ const AdminWarna = (props) => {
                                     }
                                 }}
                             />
-
-
                             <ListWarna daftarWarna={daftarWarna} id={id} jenis={jenis} setId={setId} setJenis={setJenis} />
                         </div>
                     </div>

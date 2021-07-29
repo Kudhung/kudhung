@@ -43,13 +43,67 @@ button.btn-submit {
     padding-bottom: 20px;
     
   }
+  .div_button_add{
+      text-align: right;
+      margin-right:2%;
+      padding-bottom: 0px;
+      
+    }
+  .button_add_post {
+    font-size: 15px;
+    text-align: right;
+    cursor: pointer;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color: black;
+    border: none;
+    box-shadow: 0 4px #999;
+    font-weight: bold;
+  }
+  
+  .button_add_post:hover {
+      background-color: #195bd4d5;
+      font-weight: bold;
+  }
+  
+  .button_add_post:active {
+    background-color: #000000;
+    box-shadow: 0 5px #999;
+    transform: translateY(4px);
+    font-weight: bold;
+  }
+  .button_detail_post {
+    font-size: 15px;
+    text-align: left;
+    cursor: pointer;
+    outline: none;
+    color: rgb(255, 255, 255);
+    background-color: #4d76fdd8;
+    border: none;
+    border-radius: 5px;
+    box-shadow: 0 4px #999;
+    font-weight: bold;
+    margin-left: 5%;
+  }
+  
+  .button_detail_post:hover {
+      background-color: #003cff;
+      font-weight: bold;
+  }
+  
+  .button_detail_post:active {
+    background-color: #000000;
+    box-shadow: 0 5px #999;
+    transform: translateY(4px);
+    font-weight: bold;
+  }
   .button_remove_post {
     font-size: 15px;
     text-align: left;
     cursor: pointer;
     outline: none;
     color: rgb(255, 255, 255);
-    background-color: #ff0000;
+    background-color: #ff3b3b;
     border: none;
     border-radius: 5px;
     box-shadow: 0 4px #999;
@@ -58,7 +112,7 @@ button.btn-submit {
   }
   
   .button_remove_post:hover {
-      background-color: #ff000096;
+      background-color: #ff0000;
       font-weight: bold;
   }
   
@@ -76,7 +130,7 @@ button.btn-submit {
     cursor: pointer;
     outline: none;
     color: rgb(255, 255, 255);
-    background-color: #00ff0d;
+    background-color: #15ff00d8;
     border: none;
     border-radius: 5px;
     box-shadow: 0 4px #999;
@@ -84,7 +138,7 @@ button.btn-submit {
   }
   
   .button_update_post:hover {
-      background-color: #00ff0d;
+      background-color: #01cf0b;
       font-weight: bold;
   }
   

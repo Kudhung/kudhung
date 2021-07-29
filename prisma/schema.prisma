@@ -11,27 +11,30 @@ generator client {
 }
 
 model Produk {
-  id              Int      @id @default(autoincrement())
+  id              Int            @id @default(autoincrement())
   jenisProduk     String
   hargaProduk     String
   deskripsiProduk String
   labelProduk     String
   fotoProduk      Gambarproduk[]
   gambarProduk    String
-  kategori        Kategori @relation(fields: [kategoriProduk], references: [idKtg])
+  kategori        Kategori       @relation(fields: [kategoriProduk], references: [idKtg])
   kategoriProduk  Int
-  warnaProduk     Warna[]  @relation(references: [idColor])
+  tepiProduk      String
+  bahanProduk     String
+  ukuranProduk    String
+  stokProduk      String
 }
 
 model Promo {
-  idPromo        Int      @id @default(autoincrement())
+  idPromo        Int           @id @default(autoincrement())
   judulPromo     String
   hargaPromo     String
   deskripsiPromo String
   periodePromo   String
   fotoPromo      Gambarpromo[]
   gambarPromo    String
-  warnaPromo     Warna[]
+  statusPromo    String
 }
 
 model Kategori {
@@ -41,21 +44,24 @@ model Kategori {
 }
 
 model Gambarproduk {
-  idGmbrproduk     Int    @id @default(autoincrement())
-  urlGmbrproduk    String
-  gmbrProduk Produk @relation(fields: [idProduk], references: [id])
-  idProduk   Int
+  idGmbrproduk  Int    @id @default(autoincrement())
+  urlGmbrproduk String
+  gmbrProduk    Produk @relation(fields: [idProduk], references: [id])
+  idProduk      Int
+  ketGmbr       String
 }
+
 model Gambarpromo {
-  idGmbrpromo     Int    @id @default(autoincrement())
-  urlGmbrpromo    String
-  gmbrPromo  Promo  @relation(fields: [promoId], references: [idPromo])
-  promoId    Int
+  idGmbrpromo  Int    @id @default(autoincrement())
+  urlGmbrpromo String
+  gmbrPromo    Promo  @relation(fields: [promoId], references: [idPromo])
+  promoId      Int
+  ketPromo     String
 }
 
 model Warna {
-  idColor     Int      @id @default(autoincrement())
-  jenisColor  String
-  colorProduk Produk[] @relation(references: [id])
-  colorPromo  Promo[]  @relation(references: [idPromo])
+  idColor    Int    @id @default(autoincrement())
+  jenisColor String
+  // colorProduk Produk[]
+  // colorPromo  Promo[]  @relation(references: [idPromo])
 }

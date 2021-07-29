@@ -11,7 +11,7 @@ export async function getServerSideProps(ctx) {
 const PromoKudhung = (props) => (
   <div style={{ backgroundColor: "rgb(226, 226, 226)" }}>
     <div style={{ padding: "5px 5px 5px 5px", width: "100%", height: "100%" }}>
-      <img src={props.gambarPromo} alt="" className="img-fluid" />
+      <img src={props.gambarPromo} alt={props.judulPromo} className="img-fluid" />
     </div>
     <div style={{ marginTop: "5%", fontFamily: "serif" }} >
       <h3 style={{ color: "black", fontSize: "18px", fontWeight: "bolder", textAlign: "center" }}>{props.judulPromo}</h3>
@@ -21,8 +21,8 @@ const PromoKudhung = (props) => (
     </div>
     <div className="text-block">
       <Link
-        href="/promo/[kode]/[detailpromo]"
-        as={`/promo/${props.idPromo}/${props.judulPromo.replace(/\s+/g, "-").toLowerCase()}`}
+        href="/promo/detail/[detailpromo]"
+        as={`/promo/detail/${props.idPromo}`}
       >
         <h4 style={{ color: "white", fontSize: "18px", fontWeight: "bold", marginTop: "7%" }}>DETAIL PROMO</h4>
       </Link>

@@ -13,6 +13,7 @@ export default async (req, res) => {
     data: {
       urlGmbrpromo: gambarpromo.urlGmbrpromo,
       promoId: Number(gambarpromo.promoId),
+      ketPromo: gambarpromo.ketPromo
     },
   });
   res.json(update);

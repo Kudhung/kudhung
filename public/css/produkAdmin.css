@@ -1,0 +1,57 @@
+.column__produk__admin {
+    float: left;
+    width: 100%;
+    padding: 2px;
+  }
+  
+  /* Style the images inside the grid */
+  .column__produk__admin img {
+    cursor: pointer;
+  }
+  
+  .column__produk__admin img:hover {
+    opacity: 0.5;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* The expanding image container (positioning is needed to position the close button and the text) */
+  .container__produk__admin {
+    position: relative;
+    display: none;
+  }
+  
+  /* Expanding image text */
+  #imgtext__produk__admin {
+    position: absolute;
+    bottom: 15px;
+    left: 15px;
+    color: white;
+    font-size: 20px;
+  }
+  
+  /* Closable button inside the image */
+  .closebtn__produk__admin {
+    position: absolute;
+    right: 15px;
+    color: rgb(0, 0, 0);
+    font-size: 50px;
+    cursor: pointer;
+  }
+
+  .galeri__produk{
+      font-size: 20px;
+      font-weight: bold;
+  }
+
+  .deskripsi__admin__produk{
+    overflow: hidden;
+    max-width: 75ch;
+    text-align: justify;
+    margin-right: 5px;
+  }

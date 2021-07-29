@@ -11,7 +11,8 @@ export default async (req, res) => {
     const post = await prisma.gambarpromo.create({
         data: {
             urlGmbrpromo: gambarpromo.urlGmbrpromo,
-            promoId: Number(gambarpromo.promoId),
+            ketPromo: gambarpromo.ketPromo,
+            promoId: Number(gambarpromo.promoId)
         },
     });
 

@@ -7,7 +7,7 @@ export default async (req, res) => {
 
   const del = await prisma.promo.delete({
     where: {
-      idPromo:promo.idPromo,
+      idPromo: promo.idPromo,
     },
   })
   res.json(del);
