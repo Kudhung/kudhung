@@ -21,8 +21,24 @@ const Wrapper = () => (
                 <li className="sidebar-menu">
                     <Link href='/admin/product'>
                         <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                            <i className="fa fa-list-alt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
+                            Product
+                        </a>
+                    </Link>
+                </li>
+                <li className="sidebar-menu">
+                    <Link href='/admin/promo'>
+                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
+                            <i className="fa fa-list-alt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
+                            Promo
+                        </a>
+                    </Link>
+                </li>
+                <li className="sidebar-menu">
+                    <Link href='/admin/product'>
+                        <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
                             <i className="fa fa-product-hunt" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
-                            Produk
+                            Produk2
                         </a>
                     </Link>
                 </li>
@@ -30,7 +46,7 @@ const Wrapper = () => (
                     <Link href='/admin/promo'>
                         <a style={{ fontWeight: "bold", fontSize: "20px", fontFamily: "monospace" }}>
                             <i className="fa fa-calendar" style={{ marginLeft: "15%", fontSize: "20px", marginRight: "5%" }}></i>
-                            Promo
+                            Promo2
                         </a>
                     </Link>
                 </li>
