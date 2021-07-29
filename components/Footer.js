@@ -1,5 +1,5 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faFacebook, faYoutube, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
+import { faYoutube, faInstagram, faWhatsapp } from '@fortawesome/free-brands-svg-icons'
 import Link from 'next/link'
 
 const Footer = () => (
@@ -30,14 +30,14 @@ const Footer = () => (
                     <div className="footer__widget">
                         <h6>Find Us On </h6>
                         <div className="footer__social">
-                            <a onClick={()=>(
-                                window.open('https://www.youtube.com/channel/UC7sBMEcQitsqxhSzi4eUjGg','_blank')
+                            <a onClick={() => (
+                                window.open('https://www.youtube.com/channel/UC7sBMEcQitsqxhSzi4eUjGg', '_blank')
                             )}><FontAwesomeIcon icon={faYoutube} size="xs" /></a>
-                           <a onClick={()=>(
-                                window.open('https://instagram.com/kudhu.ng?utm_medium=copy_link','_blank')
+                            <a onClick={() => (
+                                window.open('https://instagram.com/kudhu.ng?utm_medium=copy_link', '_blank')
                             )}><FontAwesomeIcon icon={faInstagram} size="xs" /></a>
-                            <a onClick={()=>(
-                                window.open('https://web.whatsapp.com/send' + '?phone=' + '6283857247099','_blank')
+                            <a onClick={() => (
+                                window.open('https://web.whatsapp.com/send' + '?phone=' + '6283857247099', '_blank')
                             )}><FontAwesomeIcon icon={faWhatsapp} size="xs" /></a>
                         </div>
                     </div>
