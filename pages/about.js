@@ -19,7 +19,7 @@ const About = () => (
                 <div className="row">
                   <div className="column">
                     <div className="card">
-                      <img src="img/team/ceo.jpg" alt="Septiany"  style={{height:"260px"}}/>
+                      <img src="img/team/ceo.png" alt="Septiany"  style={{height:"260px"}}/>
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Septiany Diyah Ayu K.A</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CEO </h6>
@@ -41,7 +41,7 @@ const About = () => (
                   </div>
                   <div className="column">
                     <div className="card">
-                      <img src="img/team/cmo.jpg" alt="Riska" style={{height:"260px"}} />
+                      <img src="img/team/cmo.png" alt="Riska" style={{height:"260px"}} />
                       <div className="container">
                         <h6 style={{ fontSize: "25px" }}>Riska Aulia Nur Ardiyanti</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CMO </h6>
@@ -52,9 +52,9 @@ const About = () => (
                   </div>
                   <div className="column">
                     <div className="card">
-                      <img src="img/team/cto.jpg" alt="Devanty" style={{height:"260px"}} />
+                      <img src="img/team/cto.png" alt="Devanty" style={{height:"260px"}} />
                       <div className="container">
-                        <h6 style={{ fontSize: "25px" }}>Devanty Ika Sanjaya P</h6>
+                        <h6 style={{ fontSize: "25px" }}>Devanty Ika Sanjaya Putri</h6>
                         <h6 className="title" style={{ color: "black", fontWeight: "bold", paddingTop: "10px" }}>  CTO </h6>
                         <p className="title">Chief Technology Officer</p>
                         <p style={{fontSize:"12px"}}>devantyikasanjayaputri@gmail.com</p>
