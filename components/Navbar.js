@@ -15,6 +15,7 @@ const Navbar = () => (
                         <ul>
                             <li><Link href="/"><a> Beranda </a></Link></li>
                             <li><Link href="/promo"><a>Promo</a></Link></li>
+                            <li><Link href="/promo2"><a>Promo2</a></Link></li>
                             <li style={{ cursor: "pointer" }}><a>Kudhung Collection</a>
                                 <ul className="dropdown">
                                     <li><Link href="/pashmina"><a>Pashmina</a></Link></li>
